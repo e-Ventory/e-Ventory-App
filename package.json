@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve",
+    "dev": "webpack serve & nodemon server/server.js",
     "start": "nodemon server/server.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/e-Ventory/e-Ventory-App#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "css-loader": "^6.7.1",
     "express": "^4.17.3",
     "file-loader": "^6.2.0",

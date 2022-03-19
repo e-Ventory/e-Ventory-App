@@ -1,0 +1,1 @@
+const connectionString = 'postgres://rngolnjc:n65esgAAoHqJ7jMSeJAYlw_w77qcdeUf@kashin.db.elephantsql.com/rngolnjc';
