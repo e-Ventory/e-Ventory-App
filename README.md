@@ -1,1 +1,1 @@
-# Welcome to our e-Ventory app
+# Welcome to our e-Ventory
