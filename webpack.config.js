@@ -47,6 +47,11 @@ module.exports = {
         secure: false,
         changeOrigin: true
       },
+      '/items/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+        changeOrigin: true
+      },
     },
     static: {
       directory: path.resolve(__dirname, '/client'),// boolean | string | array | object, static file location
