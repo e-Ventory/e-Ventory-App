@@ -1,0 +1,25 @@
+
+//nav bar styling
+
+//logged in nav bar
+.LoggedIn {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    border: 5px solid #28afd8d2;
+    background: #28afd8d2;
+    
+}
+
+//logged out nav bar
+.LoggedOut {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    border: 5px solid #28afd8d2;
+    background:  #28afd8d2;
+}

@@ -1,0 +1,181 @@
+//display :none
+//have container toggle between display block and display none
+
+//Login/Signup compnent
+
+
+.LoginSignupBox {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5%;
+    background-color: rgb(240, 241, 231);
+    
+    border-style: outset;
+
+    width: 250px;
+    height: 360px;
+    //justify-content: center;
+    align-items: center;
+    border: 3px solid rgb(240, 241, 231); 
+    background-color: #28afd8d2;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+};
+
+//welcome Header
+.welcome {
+    color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+//sign in / sign up header
+.SI {
+    color: #eee;
+  font-family: sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 70px;
+  text-align: center;
+}
+
+// login email input box
+#Email {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:100%;
+  outline: 0;
+  padding: 5px 20px 5px;
+  width: 100%;
+  margin-top: 5%;
+  
+ 
+}
+// login password input box
+#PW {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px 20px;
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 50%;
+    //width: auto;
+}
+
+// signup name box
+#namesignup {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:100%;
+  outline: 0;
+  padding: 5px 20px 5px;
+  width: 100%;
+  margin-top: 2%;
+}
+
+// email signup box
+#emailsignup {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:100%;
+  outline: 0;
+  padding: 5px 20px 5px;
+  width: 100%;
+  margin-top: 2%;
+}
+
+// signup password signup box
+#pwsignup {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:100%;
+  outline: 0;
+  padding: 5px 20px 5px;
+  width: 100%;
+  margin-top: 2%;
+}
+
+// signup category drop down 
+#dropdownlogin {
+    background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:100%;
+  outline: 0;
+  padding: 5px 20px 5px;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 25%;
+}
+
+// submit button style
+.submitbutton {
+      background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+      border-radius: .5rem;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      display: flex;
+      font-size: 16px;
+      justify-content: center;
+      padding: 1rem 1.75rem;
+      text-decoration: none;
+      width: 100%;
+      border: 0;
+      //margin-top: 40%;
+      margin-bottom: 5%;
+      
+
+    
+    .button-43:hover {
+      background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+    }
+
+    
+}
+
+
+// terms and conditions link
+.Terms {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 10%;
+    position: right;
+    
+}
+
+
