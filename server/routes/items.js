@@ -2,7 +2,7 @@ const express = require('express');
 router = express.Router();
 const itemsController = require('../controllers/itemsController');
 
-router.get('/',itemsController.getAllItems, (req,res) => {
+router.get('/:id',itemsController.getAllItems, (req,res) => {
 
   // request body sends the item information
   // console.log('RECIEVED!', res.locals.items)
@@ -10,19 +10,25 @@ router.get('/',itemsController.getAllItems, (req,res) => {
 
 })
 
-router.patch('/',itemsController.updateItem, (req,res) => {
+router.patch('/:userId',itemsController.updateItem, (req,res) => {
 
-  // request body sends the item information
+  // request body sends the item to indicate which item to update
 
-  res.status(200).json({message: ' update items route'});
+  res.status(200).json({item: res.locals.updatedItem});
 
 })
 
-router.post('/',itemsController.createItem, (req,res) => {
+router.post('/:userId',itemsController.createItem, (req,res) => {
 
-  // request body sends the item information
+  // request body sends the item information, then inserted into db table
 
-  res.status(200).json({message: 'create item route'});
+  res.status(200).json({item: res.locals.createdItem});
+
+})
+
+router.delete('/:itemId', (req, res) => {
+
+  res.status(200).json({message: 'item deleted'});
 
 })
 
