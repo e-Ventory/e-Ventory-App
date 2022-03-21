@@ -3,12 +3,12 @@ import React from 'react';
 import InventoryDisplay from '../components/InventoryDisplay.jsx';
 
 
-const InventoryPageContainer = () => {
+const InventoryPageContainer = (props) => {
   return (
     <div>
       <h3>Inventory</h3>
       {/* <AddItem /> */}
-      <InventoryDisplay />
+      <InventoryDisplay user={props.user}/>
     </div>
   );
 };

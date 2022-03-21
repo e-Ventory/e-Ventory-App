@@ -8,7 +8,7 @@ itemsController.getAllItems = async (req , res, next ) => {
 
   try {
     const dbRes = await client.query('SELECT * FROM items WHERE items.account_id = $1', [id]);
-    console.log(dbRes.rows);
+    // console.log(dbRes.rows);
     res.locals.items = [...dbRes.rows];
     console.log('GETTING TO THE GET ALL USERS MIDDLEWARE');
     return next();
@@ -24,16 +24,27 @@ itemsController.getAllItems = async (req , res, next ) => {
 }
 
 itemsController.updateItem = async (req , res, next ) => {
-
-  // console.log('request params:', req.params);
-  // console.log('request body:', req.body);
-
-  // const  account_id  = req.params.userId;
-  const { id, name, info, quantity, category, location } = req.body.items;
-  console.log('hit')
+  
+  const { id } = req.body.items;
+  
   try {
-    // find item to update, grab the item values
+    // Line 31 - 47 is to update only field that were filled in
+    //  copy item
+    const updateItemInfo = {...req.body.items};
+    //  check item for null values
+    const newUpdatedItem = {};
+    for (const property in updateItemInfo) {
+      if (updateItemInfo[property]) {
+        newUpdatedItem[property] = updateItemInfo[property];
+      }
+    }
+    // grab old item 
+      const dbItemRes = await client.query('SELECT * FROM items WHERE items.id = $1', [id]);
 
+    // spread new info into old item
+    const newObject = { ...dbItemRes.rows[0], ...newUpdatedItem };
+
+    const { name, info, quantity, category, location } = newObject;
 
     const dbRes = await client.query(
     "UPDATE items SET name = $1, info = $2, quantity = $3, category = $4, location = $5 WHERE id = $6;"  
@@ -52,10 +63,13 @@ itemsController.updateItem = async (req , res, next ) => {
 
 }
 
+// Create an inventory item on the database
 itemsController.createItem = async (req , res, next ) => {
 
-  const  account_id  = req.params.userId;
-  const { name, info, quantity, category, location } = req.body;
+  // Grabs Query info from the request body
+  const { name, info, quantity, category, location, account_id } = req.body.items;
+
+  console.log(req.body.items);
 
   try {
     const dbRes = await client.query('INSERT INTO items (name, info, quantity, category, location, account_id) VALUES ($1, $2, $3, $4, $5, $6)', [name, info, quantity, category, location, account_id]);

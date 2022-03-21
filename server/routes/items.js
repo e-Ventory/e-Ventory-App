@@ -14,11 +14,12 @@ router.patch('/',itemsController.updateItem, (req,res) => {
 
   // request body sends the item to indicate which item to update
 
+  // res.status(200);
   res.status(200).json({item: res.locals.updatedItem});
 
 })
 
-router.post('/:userId',itemsController.createItem, (req,res) => {
+router.post('/',itemsController.createItem, (req,res) => {
 
   // request body sends the item information, then inserted into db table
 
@@ -26,7 +27,7 @@ router.post('/:userId',itemsController.createItem, (req,res) => {
 
 })
 
-router.delete('/:itemId', (req, res) => {
+router.delete('/:itemId', itemsController.deleteItem, (req, res) => {
 
   res.status(200).json({message: 'item deleted'});
 
