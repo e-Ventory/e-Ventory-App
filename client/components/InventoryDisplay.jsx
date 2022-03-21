@@ -8,8 +8,10 @@ import 'regenerator-runtime/runtime';
 
 const InventoryDisplay = (props) => {
   
+  // state for inventory
   const [ inv, setInv ] = useState([]);
 
+  // function that runs to update item
   const updatedItem = (e) => {
     e.preventDefault();
  
@@ -34,6 +36,7 @@ const InventoryDisplay = (props) => {
       .then(() => inventoryGet());
   }
 
+  // function to get current users inventory
   const inventoryGet = () => {
     let invData;
     fetch('http://localhost:3000/items/1', {
@@ -46,23 +49,19 @@ const InventoryDisplay = (props) => {
       .then((data) => invData = data.items)
       .then((data) => {
         const invClass = [];
+        // make an inventory c
         invData.forEach((el, index) => {
         invClass.push(<Inventory id={index} invInfo = {data[index]} updatedItem = {updatedItem}/>)
         })
         setInv(invClass);
       });
   }
-
+  // get inventory on first render
   useEffect(() => {
     inventoryGet();
   }, []);
 
-  // inventoryPost();
 
-  // const array = [
-  // ]
-
-  // something.forEach(array.push(<Inventory /><button>Update</button><button>Delete</button>))
   return (
     <div className='all-inventory'>
       <div className = 'inventory-labels'>

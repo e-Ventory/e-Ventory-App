@@ -32,6 +32,9 @@ itemsController.updateItem = async (req , res, next ) => {
   const { id, name, info, quantity, category, location } = req.body.items;
   console.log('hit')
   try {
+    // find item to update, grab the item values
+
+
     const dbRes = await client.query(
     "UPDATE items SET name = $1, info = $2, quantity = $3, category = $4, location = $5 WHERE id = $6;"  
     , [name, info, quantity, category, location, id]);

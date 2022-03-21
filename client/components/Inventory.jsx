@@ -14,19 +14,19 @@ const Inventory = (props) => {
         <form onSubmit={(e) => props.updatedItem(e)} >
           <input type="hidden" name="item-id" value={props.invInfo.id} />
           <div className="input-container">
-            <input type="text" name="item-name" placeholder="Name" required />
+            <input type="text" name="item-name" placeholder="Name" />
           </div>
           <div className="input-container">
-            <input type="number" name="item-quantity" placeholder="Quantity" required />
+            <input type="number" name="item-quantity" placeholder="Quantity"  />
           </div>
           <div className="input-container">
             <input type="text" name="item-info" placeholder="Info"/>
           </div>
           <div className="input-container">
-            <input type="text" name="item-category" placeholder="Category" required />
+            <input type="text" name="item-category" placeholder="Category"  />
           </div>
           <div className="input-container">
-            <input type="text" name="item-location" placeholder="Location" required />
+            <input type="text" name="item-location" placeholder="Location"  />
           </div>
           <div className="button-container">
             <input type="submit" />
