@@ -28,7 +28,9 @@ const Navbar = (props) => {
   const [isShow, setIsShow] = React.useState(true);  
   const handleClick = () => {setIsShow(s => !s)};
 
-if (!props.user.id){
+
+  //for future engineers - if you type in a fake account you will get an error and this needs to be fixed. xoxo gossip girl
+if (props.user.name === undefined){
   return (
     <div>
       <NavBarLoggedOut />
