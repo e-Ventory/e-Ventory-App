@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 //add onclick to a anchor tag (<a></a>)
 
-const LoginSignup = () => {
+const LoginSignup = (props) => {
   
   const [isShow, setIsShow] = React.useState(true);  
   const handleClick = () => {setIsShow(s => !s)};
@@ -15,7 +15,7 @@ const LoginSignup = () => {
 if (isShow){
   return (
     <div>
-      <Login />
+      <Login setUser = {props.setUser}/>
       <div className="button-container">
           
         </div>
@@ -25,7 +25,7 @@ if (isShow){
   } else {
       return (
         <div>
-          <SignUp />
+          <SignUp setUser = {props.setUser}/>
           <div className="button-container">
           
         </div>

@@ -23,12 +23,12 @@ will contain on logged in age:
   Profile Icon
 */
 
-const Navbar = () => {
+const Navbar = (props) => {
   
   const [isShow, setIsShow] = React.useState(true);  
   const handleClick = () => {setIsShow(s => !s)};
 
-if (!isShow){
+if (!props.user.id){
   return (
     <div>
       <NavBarLoggedOut />

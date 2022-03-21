@@ -17,8 +17,8 @@ router.post('/', accountsController.createAccount, (req,res) => {
   res.contentType('application/json').status(200).json({message: res.locals.message});
 });
 // handle get requests to the path login - Logs in an account
-router.post('/login', (req, res) => {
-  res.contentType('application/json')
+router.post('/login/', accountsController.login, (req, res) => {
+  res.contentType('application/json').status(200).json({account: res.locals.account});
 })
 
 
