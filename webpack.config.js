@@ -43,12 +43,12 @@ module.exports = {
     },
     proxy: { // proxy URLs to backend development server
       '/accounts/**': {
-        target: 'http://localhost:3000/accounts/',
+        target: 'http://localhost:3000/',
         secure: false,
         changeOrigin: true
       },
       '/items/**': {
-        target: 'http://localhost:3000/items/',
+        target: 'http://localhost:3000/',
         secure: false,
         changeOrigin: true
       },
