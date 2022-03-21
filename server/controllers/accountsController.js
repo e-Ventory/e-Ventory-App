@@ -26,8 +26,8 @@ accountsController.getAllAccounts = async (req , res, next ) => {
 * Middleware to get a single account
 */
 accountsController.getAnAccount = async (req , res, next ) => {
-  // get the id from req.params
-  const { id } = req.params;
+  // get the name from req.params
+  const { name } = req.params;
   try {
     // create an object with the query text, and the values to insert into the query
     const query = {
@@ -80,6 +80,9 @@ accountsController.createAccount = async (req , res, next ) => {
   }
 }
 
+/**
+ * Middleware to login
+ */
 accountsController.login = async (req, res, next) => {
   // get the username and password from the req body
   const {username, password} = req.body;
@@ -115,9 +118,64 @@ accountsController.login = async (req, res, next) => {
         message: {err: "Account does not exist"},
       })
   }
-
- 
 }
+/**
+ * Middleware to change password
+ */
+accountsController.changePassword = async (req , res, next ) => {
+  // get the name from params
+  const { name } = req.params;
+  // get the new password from the body
+  const { password } = req.body;
+  try {
+    // update the password where the account name is equal to name 
+    const query = {
+      text:'UPDATE accounts SET password = $2 WHERE accounts.name = $1',
+      values: [name, password]
+    }
+    await client.query(query);
+    // assign res.locals.message a string stating the password has been updated
+    res.locals.message = "Password has been updated";
+    // go to the next middleware
+    next();
+  }
+  catch (err) {
+    // if there is an err, return the errorObj to the global error handler
+    return next({
+      log: 'Error Express - accountsController.changePassword',
+      status: 500,
+      message: {err},
+    })
+  }
+}
+/**
+ * Middleware to delete an account
+ */
+ accountsController.deleteAccount = async (req , res, next ) => {
+  // get the name from params
+  const { name } = req.params;
+  try {
+    // update the password where the account name is equal to name 
+    const query = {
+      text:'DELETE FROM accounts WHERE accounts.name = $1',
+      values: [name]
+    }
+    await client.query(query);
+    // assign res.locals.message a string stating the password has been updated
+    res.locals.message = "Account has been deleted";
+    // go to the next middleware
+    next();
+  }
+  catch (err) {
+    // if there is an err, return the errorObj to the global error handler
+    return next({
+      log: 'Error Express - accountsController.deleteAccount',
+      status: 500,
+      message: {err},
+    })
+  }
+}
+
 
 
 module.exports = accountsController;
