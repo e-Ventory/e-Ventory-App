@@ -7,15 +7,35 @@ import { useForm } from 'react-hook-form';
 
 const InventoryDisplay = () => {
   
-  const onUpdateSubmit = data => {
-    alert(JSON.stringify(data));
-  }
+//   const [ inv, setInv ] = useState([]);
+  
+//   const body = { user: '????'};
 
-  const { handleSubmit, redister, errors, control } = useForm();
-  // const array = [
-  // ]
+//   const inventoryPost = async () => {
+//     const response = await fetch('???????', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json;charset=utf-8'
+//       },
+//       body: JSON.stringify(data),
+//     })
 
-  // something.forEach(array.push(<Inventory /><button>Update</button><button>Delete</button>))
+//     const data = await response.json();
+
+//     const invClass = [];
+
+//     data.forEach((el, index) => {
+//       invClass.push(<Inventory id={index} {...inv}/>)
+//     })
+    
+//     setInv(invClass);
+//   }
+
+  // const { handleSubmit, redister, errors, control } = useForm();
+  // // const array = [
+  // // ]
+
+  // // something.forEach(array.push(<Inventory /><button>Update</button><button>Delete</button>))
   return (
     <div class ='all-inventory'>
       <div className = 'inventory-labels'>
@@ -28,14 +48,7 @@ const InventoryDisplay = () => {
       
       {/* whole div needs to be added per item in inventory array */}
       <div className = 'scroll'>
-       <Inventory />
-       <Inventory />
-       <Inventory />
-       <Inventory />
-       <Inventory />
-       <Inventory />
-       <Inventory />
-       <Inventory />
+        {/* {inv}*/}
        <Inventory />
        <Inventory />
        <Inventory />

@@ -6,10 +6,10 @@ const Inventory = (props) => {
   return (
     <form className = 'inventory-container'>
       <h4 className = 'id-column'>ID</h4>
-      <h4 className = 'other-column'>NAME</h4>
-      <h4 className = 'quantity-column'>QUANTITY</h4>
-      <h4 className = 'other-column'>CATEGORY</h4>
-      <h4 className = 'other-column'>LOCATION</h4>
+      <h4 className = 'other-column'>Name</h4>
+      <h4 className = 'quantity-column'>Quantity</h4>
+      <h4 className = 'other-column'>Category</h4>
+      <h4 className = 'other-column'>Location</h4>
       <Popup trigger={<button type="button" className ='update-delete-buttons'>Update</button>}>
         <form >
           <div className="input-container">
@@ -22,7 +22,7 @@ const Inventory = (props) => {
             <input type="text" name="item-category" placeholder="Category" required />
           </div>
           <div className="input-container">
-            <input type="text" name="item-location" placeholder="location" required />
+            <input type="text" name="item-location" placeholder="Location" required />
           </div>
           <div className="button-container">
             <input type="submit" />
@@ -35,3 +35,9 @@ const Inventory = (props) => {
 };
 
 export default Inventory;
+
+{/* <h4 className = 'id-column'>{props.inv[props.id].id}</h4>
+      <h4 className = 'other-column'>{props.inv[props.id].name}</h4>
+      <h4 className = 'quantity-column'>{props.inv[props.id].quantity}</h4>
+      <h4 className = 'other-column'>{props.inv[props.id].category}</h4>
+      <h4 className = 'other-column'>{props.inv[props.id].location}</h4> */}
