@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, './client/index.js'),
+  entry: ["regenerator-runtime/runtime.js", path.join(__dirname, './client/index.js')],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
@@ -43,12 +43,12 @@ module.exports = {
     },
     proxy: { // proxy URLs to backend development server
       '/accounts/**': {
-        target: 'http://localhost:3000/',
+        target: 'http://localhost:3000/accounts/',
         secure: false,
         changeOrigin: true
       },
       '/items/**': {
-        target: 'http://localhost:3000/',
+        target: 'http://localhost:3000/items/',
         secure: false,
         changeOrigin: true
       },
