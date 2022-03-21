@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 
-import AccountPageContainer from '../containers/AccountPageContainer.jsx';
-import InventoryPageContainer from '../containers/InventoryPageContainer.jsx';
-import LoginSignupContainer from '../containers/LoginSignupContainer.jsx';
+import NavBarLoggedIn from '../components/NavBarLoggedIn.jsx'
+import NavBarLoggedOut from '../components/NavBarLoggedOut.jsx'
+import { useState } from 'react';
 
+import '../stylesheets/NavBar.scss';
 
 /*
 Navigation Bar Displayed at the top of every page
@@ -23,14 +24,24 @@ will contain on logged in age:
 */
 
 const Navbar = () => {
+  
+  const [isShow, setIsShow] = React.useState(true);  
+  const handleClick = () => {setIsShow(s => !s)};
+
+if (!isShow){
   return (
     <div>
-     <h1>Logo</h1>
-     <Link to='/account' >Account</Link>
-     <Link to='/inventory'>Inventory</Link>
-     <h2>profile pic</h2>
+      <NavBarLoggedOut />
     </div>
-  );
+    )
+  } else {
+      return (
+        <div>
+          <NavBarLoggedIn />
+        </div>
+    )
+  };
 };
 
+     
 export default Navbar;
