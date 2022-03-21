@@ -6,6 +6,14 @@ import { useForm } from "react-hook-form";
 //Login component
 
 
+//let options = {
+//   method: 'POST',
+//   headers: {
+//     'Content-Type': 'application/json;charset=utf-8'
+//   },
+//   body: JSON.stringify(data)
+// }
+
 const Login = () => {
   const {register, handleSubmit} = useForm();
   const [data, setData] = useState("")
@@ -18,7 +26,7 @@ const Login = () => {
       <h2 className='SI'>Please sign in</h2>
       <form className="LoginBox" onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
         <div className="input-container" >
-          <input {...register("email")} type="text" id="Email" name="Email" placeholder="Email" required />
+          <input {...register("username")} type="text" id="username" name="username" placeholder="Username" required />
           {/* {renderErrorMessage("Please enter username")} */}
         </div>
         <div className="input-container">

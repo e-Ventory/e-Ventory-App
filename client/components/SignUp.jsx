@@ -20,7 +20,7 @@ const SignUp = () => {
       <h2 className='SI'>Please sign up</h2>
       <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
         <div className="input-container">
-          <input {...register("name")} type="text" id="namesignup" name="Name" placeholder="Name/Organization" required />
+          <input {...register("Username")} type="text" id="namesignup" name="Username" placeholder="Username" required />
           {/* {renderErrorMessage("Please enter username")} */}
         </div>
         <div className="input-container">

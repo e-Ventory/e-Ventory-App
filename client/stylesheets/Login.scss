@@ -3,6 +3,10 @@
 
 //Login/Signup compnent
 
+// .LSPage {
+//   display: grid;
+//   grid-auto-columns: 50px;
+// }
 
 .LoginSignupBox {
     display: flex;
@@ -25,6 +29,7 @@
     height: 500px;
     padding: 20px;
     width: 320px;
+    margin-top: 20px;
 };
 
 //welcome Header
@@ -47,7 +52,7 @@
 }
 
 // login email input box
-#Email {
+#username {
   background-color: #303245;
   border-radius: 12px;
   border: 0;
@@ -178,4 +183,21 @@
     
 }
 
+#loginArt1 {
+    max-width: 35%;
+    max-height: auto;
+    position: absolute;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-top: 80px;
+}
 
+#loginArt2 {
+  display: flex;
+    max-width: 30%;
+    max-height: auto;
+    position: absolute;
+    margin-top: 63px;
+    margin-left: 820px;
+    align-items: center;
+}

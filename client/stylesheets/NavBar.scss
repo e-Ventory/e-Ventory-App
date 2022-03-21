@@ -8,8 +8,9 @@
     margin-left: auto;
     margin-right: auto;
     align-items: center;
-    border: 5px solid #28afd8d2;
+    // border: 5px  #28afd8d2;
     background: #28afd8d2;
+    border-radius: 5px;
     
 }
 
@@ -17,9 +18,93 @@
 .LoggedOut {
     display: flex;
     flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
+    //margin-left: auto;
+    //margin-right: auto;
     align-items: center;
     border: 5px solid #28afd8d2;
     background:  #28afd8d2;
+    border-radius: 10px;
+}
+
+//logo image 
+.logo {
+    max-width: 6%;
+    max-height: auto;
+}
+
+//company name styling
+.brand {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 50px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+}
+
+.subHeader {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+}
+
+//about us link
+.deadLink1 {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+    //align-self: right;
+    //text-align: right;
+    float: right;
+    position: absolute;
+    right: 25px;
+    
+}
+
+// packages link
+.deadLink2 {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+    //align-self: right;
+    //text-align: right;
+    float: right;
+    position: absolute;
+    right: 150px;
+    
+}
+
+#inventoryLink {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+    //align-self: right;
+    //text-align: right;
+    float: right;
+    position: absolute;
+    right: 150px;
+}
+
+#accountLink {
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(250, 250, 250);
+    padding-left: 1%;
+    //align-self: right;
+    //text-align: right;
+    float: right;
+    position: absolute;
+    right: 25px;
 }

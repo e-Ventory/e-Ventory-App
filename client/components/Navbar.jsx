@@ -28,7 +28,7 @@ const Navbar = () => {
   const [isShow, setIsShow] = React.useState(true);  
   const handleClick = () => {setIsShow(s => !s)};
 
-if (isShow){
+if (!isShow){
   return (
     <div>
       <NavBarLoggedOut />
