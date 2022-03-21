@@ -23,7 +23,7 @@ const InventoryDisplay = (props) => {
         location: e.target[5].value,
       }
     }
-    const url = 'http://localhost:3000/items/'.concat(body.items.id);
+    const url = 'http://localhost:3000/items/';
     fetch(url, {
       method: 'PATCH',
       headers: {

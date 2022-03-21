@@ -10,7 +10,7 @@ router.get('/:id',itemsController.getAllItems, (req,res) => {
 
 })
 
-router.patch('/:userId',itemsController.updateItem, (req,res) => {
+router.patch('/',itemsController.updateItem, (req,res) => {
 
   // request body sends the item to indicate which item to update
 

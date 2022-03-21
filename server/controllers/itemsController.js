@@ -28,15 +28,15 @@ itemsController.updateItem = async (req , res, next ) => {
   // console.log('request params:', req.params);
   // console.log('request body:', req.body);
 
-  const  account_id  = req.params.userId;
-  const { id, name, info, quantity, category, location } = req.body;
-
+  // const  account_id  = req.params.userId;
+  const { id, name, info, quantity, category, location } = req.body.items;
+  console.log('hit')
   try {
     const dbRes = await client.query(
     "UPDATE items SET name = $1, info = $2, quantity = $3, category = $4, location = $5 WHERE id = $6;"  
     , [name, info, quantity, category, location, id]);
     console.log(dbRes.command);
-    res.locals.updatedItem = { id, name, info, quantity, category, location, account_id };
+    res.locals.updatedItem = { id, name, info, quantity, category, location};
     return next();
   }
   catch (err) {
