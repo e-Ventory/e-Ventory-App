@@ -9,7 +9,7 @@ const cors = require('cors');
  * require routers
  */
 
- const usersRouter = require('./routes/users.js');
+ const accountsRouter = require('./routes/accounts.js');
  const itemsRouter = require('./routes/items.js');
 
 // handle parsing request body
@@ -34,8 +34,8 @@ app.get('/', (req, res) => {
  * ROUTES
  */
 
-// send to user router on path /users/
-app.use('/users/',usersRouter);
+// send to user router on path /accounts/
+app.use('/accounts/',accountsRouter);
 // send to user router on path /items/
 app.use('/items/',itemsRouter);
 
