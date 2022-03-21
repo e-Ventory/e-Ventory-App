@@ -19,7 +19,6 @@ const InventoryDisplay = () => {
   return (
     <div class ='all-inventory'>
       <div className = 'inventory-labels'>
-        <h4></h4>
         <h4 className = 'id-column'>ID</h4>
         <h4 className = 'other-column'>NAME</h4>
         <h4 className = 'quantity-column'>QUANTITY</h4>
