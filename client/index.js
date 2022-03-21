@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx"
@@ -8,14 +8,19 @@ import InventoryPageContainer from './containers/InventoryPageContainer.jsx';
 import NoPage from './components/NoPage.jsx';
 
 export default function App() {
+//use state hook
+const [user, setUser] = useState({});
+console.log('user', user);
+
+
   return ( 
     <Router>
-      <Navbar />
+      <Navbar user={user}/>
       <Routes>
-        <Route path='/' element={<LoginSignupContainer />} />
-        <Route path='/account' element ={<AccountPageContainer />} />
-        <Route path='/inventory' element ={<InventoryPageContainer />} />
-        <Route path='*' element ={<NoPage />} />
+        <Route path='/' element={<LoginSignupContainer setUser = {setUser}/>} />
+        <Route path='/account' element ={<AccountPageContainer user = {user}/>} />
+        <Route path='/inventory' element ={<InventoryPageContainer user = {user}/>} />
+        <Route path='*' element ={<NoPage user = {user}/>} />
       </Routes>
     </Router>
   )

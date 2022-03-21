@@ -80,4 +80,44 @@ accountsController.createAccount = async (req , res, next ) => {
   }
 }
 
+accountsController.login = async (req, res, next) => {
+  // get the username and password from the req body
+  const {username, password} = req.body;
+  // get the account information from the database
+  try {
+    // select all users with the username
+    const query = {
+      text:'SELECT * from accounts WHERE name = $1',
+      values: [username],
+    }
+    // query the database, assign the result in dbRes
+    const dbRes = await client.query(query);
+    //check if the account password matches the req body password
+    if (dbRes.rows[0].password === password) {
+      // assign res.locals.account the account information
+      res.locals.account = dbRes.rows[0];
+      // go to the next middleware
+      next();
+    } else {
+        // if the passwords dont match return an error
+        return next({
+          log: 'Error Express - accountsController.login, password does not match',
+          status: 500,
+          message: {err: "Password does not match"},
+        })
+     }
+  }catch(err) {
+      // if there is an err, return the errorObj to the global error handler
+      // if it errs here, the account does not exist
+      return next({
+        log: 'Error Express - accountsController.login',
+        status: 500,
+        message: {err: "Account does not exist"},
+      })
+  }
+
+ 
+}
+
+
 module.exports = accountsController;
