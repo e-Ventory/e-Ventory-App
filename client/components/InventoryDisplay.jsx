@@ -12,7 +12,6 @@ const InventoryDisplay = (props) => {
   const [ inv, setInv ] = useState([]);
 
 
-  console.log(props.user.id);
   const [ userId, setUserId ] = useState([props.user.id])
   // function to add item
   const addedItem = (e) => {
@@ -27,7 +26,7 @@ const InventoryDisplay = (props) => {
         location: e.target[5].value,
       }
     }
-    const url = '/items/';
+    const url = 'http://localhost:3000/items/';
     fetch(url, {
       method: 'POST',
       headers: {
@@ -42,8 +41,7 @@ const InventoryDisplay = (props) => {
   // function to delete item
   const deletedItem = (e) => {
     e.preventDefault();
-    console.log('hit')
-    const url = '/items/'.concat(e.target[0].value);
+    const url = 'http://localhost:3000/items/'.concat(e.target[0].value);
     fetch(url, {
       method: 'DELETE',
       headers: {
@@ -69,7 +67,7 @@ const InventoryDisplay = (props) => {
       }
     }
     // Patch request to update an item 
-    const url = '/items/';
+    const url = 'http://localhost:3000/items/';
     fetch(url, {
       method: 'PATCH',
       headers: {
@@ -83,7 +81,7 @@ const InventoryDisplay = (props) => {
   // function to get current users inventory
   const inventoryGet = () => {
     let invData;
-    const url = '/items/'.concat(props.user.id);
+    const url = 'http://localhost:3000/items/'.concat(props.user.id);
 
     fetch(url, {
       method: 'GET',
@@ -136,7 +134,7 @@ const InventoryDisplay = (props) => {
               <input type="number" name="item-quantity" placeholder="Quantity" required />
             </div>
             <div className="input-container">
-              <input type="text" name="item-info" placeholder="Info" value="N/A" />
+              <input type="text" name="item-info" placeholder="Info" />
             </div>
             <div className="input-container">
               <input type="text" name="item-category" placeholder="Category" required />
