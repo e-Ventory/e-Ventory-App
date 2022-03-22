@@ -15,7 +15,7 @@ itemsController.getAllItems = async (req , res, next ) => {
   }
   catch (err) {
     return next({
-      log: 'Error Express - usersController.getAllUsers',
+      log: 'Error Express - itemsController.getAllUsers',
       status: 500,
       message: {err} 
     })
@@ -55,7 +55,7 @@ itemsController.updateItem = async (req , res, next ) => {
   }
   catch (err) {
     return next({
-      log: 'Error Express - usersController.updateItem',
+      log: 'Error Express - itemsController.updateItem',
       status: 500,
       message: {err} 
     })
@@ -79,7 +79,7 @@ itemsController.createItem = async (req , res, next ) => {
   }
   catch (err) {
     return next({
-      log: 'Error Express - usersController.createItem',
+      log: {err},
       status: 500,
       message: {err} 
     })
@@ -98,7 +98,7 @@ itemsController.deleteItem = async (req , res, next ) => {
   }
   catch (err) {
     return next({
-      log: 'Error Express - usersController.deleteItem',
+      log: 'Error Express - itemsController.deleteItem',
       status: 500,
       message: {err} 
     })
