@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve",
+    "dev": "webpack serve & nodemon server/server.js",
     "start": "nodemon server/server.js"
   },
   "repository": {
@@ -21,15 +21,23 @@
   },
   "homepage": "https://github.com/e-Ventory/e-Ventory-App#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "css-loader": "^6.7.1",
     "express": "^4.17.3",
     "file-loader": "^6.2.0",
     "loader": "^2.1.1",
     "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-hook-form": "^7.28.1",
     "react-router": "^6.2.2",
-    "style": "^0.0.3"
+    "react-router-dom": "^6.2.2",
+    "reactjs-popup": "^2.0.5",
+    "regenerator-runtime": "^0.13.9",
+    "style": "^0.0.3",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -39,6 +47,7 @@
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
+    "url-loader": "^4.1.1",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
